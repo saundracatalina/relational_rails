@@ -1,5 +1,5 @@
 <h1>Distribution Centers</h1>
 
 <% @distribution_centers.each do |distribution_center| %>
-<h3> <%= distribution_center.name %></h3>
+<h3><a href="/distribution_centers/<%= distribution_center.id %>"> <%= distribution_center.name %></a></h3>
 <% end %>
