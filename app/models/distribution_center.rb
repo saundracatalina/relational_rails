@@ -1,0 +1,3 @@
+class DistributionCenter < ApplicationRecord
+  
+end
