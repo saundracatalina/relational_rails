@@ -6,4 +6,7 @@ class DistributionCentersController < ApplicationController
   def show
     @distribution_center = DistributionCenter.find(params[:id])
   end
+
+  def new
+  end
 end
