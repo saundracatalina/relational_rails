@@ -9,9 +9,11 @@ RSpec.describe 'when I visit candy shops show page' do
   visit "/candy_shops/#{shop_1.id}"
 
   expect(page).to have_content(shop_1.name)
+  expect(page).to have_content(shop_1.state)
 
   visit "/candy_shops/#{shop_2.id}"
 
   expect(page).to have_content(shop_2.name)
+  expect(page).to have_content(shop_2.state)
   end
 end
