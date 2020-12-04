@@ -6,14 +6,9 @@ RSpec.describe "distribution centers index page" do
     dc_2 = DistributionCenter.create!(name: "Ships Ahoy", trucks_deployed: 25)
 
     visit "/distribution_centers"
-
+    
     expect(page).to have_content(dc_1.name)
     expect(page).to have_content(dc_2.name)
   end
 end
 
-
-# For each parent table
-# As a visitor
-# When I visit '/parents'
-# Then I see the name of each parent record in the system
