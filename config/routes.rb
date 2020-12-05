@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/candy_shops', to: 'candy_shops#index'
   get '/candy_shops/new', to: 'candy_shops#new'
-  get '/candy_shops/:id', to: 'candy_shops#show'
   post '/candy_shops', to: 'candy_shops#create'
+  get '/candy_shops/:id', to: 'candy_shops#show'
+  get '/candy_shops/:id/edit', to: 'candy_shops#edit'
 end
