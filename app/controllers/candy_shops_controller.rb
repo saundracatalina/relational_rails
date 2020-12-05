@@ -8,9 +8,15 @@ class CandyShopsController < ApplicationController
   end
 
   def new
-    @candy_shop = CandyShop.new
-    # (params[:candy_shop])
+
   end
 
-  
+  def create
+    @candy_shop = CandyShop.create!({
+                  name: params[:name],
+                  state: params[:state]
+                  })
+    @candy_shop.save
+    redirect_to '/candy_shops'
+  end
 end
