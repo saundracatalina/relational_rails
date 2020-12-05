@@ -2,3 +2,4 @@
 <% @candy_shops.each do |shop| %>
 <h3><a href="/candy_shops/<%= shop.id %>"><%= shop.name %></a></h3>
 <% end %>
+<%= link_to "New Candy Shop", '/candy_shops/new' %>
