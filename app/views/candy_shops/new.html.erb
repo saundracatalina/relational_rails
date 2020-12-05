@@ -1,0 +1,8 @@
+<h1>Fill in this form to enter a new Candy Shop!</h1>
+<%= form_for(@candy_shop) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+<% end %>
