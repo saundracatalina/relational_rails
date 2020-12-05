@@ -8,6 +8,9 @@ class CandyShopsController < ApplicationController
   end
 
   def new
-     
+    @candy_shop = CandyShop.new
+    # (params[:candy_shop])
   end
+
+  
 end
