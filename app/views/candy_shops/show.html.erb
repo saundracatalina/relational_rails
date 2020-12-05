@@ -1,2 +1,4 @@
 <h1><%= @candy_shop.name %></h1>
 <p><%= "Location: #{@candy_shop.state}" %></p>
+
+<%= link_to 'Update Candy Shop', "/candy_shops/#{@candy_shop.id}/edit" %>
