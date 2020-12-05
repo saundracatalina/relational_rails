@@ -6,4 +6,8 @@ class CandyShopsController < ApplicationController
   def show
     @candy_shop = CandyShop.find(params[:id])
   end
+
+  def new
+     
+  end
 end
