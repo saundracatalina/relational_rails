@@ -9,4 +9,15 @@ class DistributionCentersController < ApplicationController
 
   def new
   end
+
+  def create
+    dc = DistributionCenter.create!({
+      name: params[:name],
+      trucks_deployed: params[:trucks_deployed]
+      })
+      
+      dc.save
+      
+    redirect_to '/distribution_centers'
+  end
 end

@@ -1,0 +1,15 @@
+<h1>New Distribution Center</h1>
+
+<%= form_tag '/distribution_centers' do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br>
+  <br>
+  <%= label_tag :trucks_deployed %>
+  <%= text_field_tag :trucks_deployed %>
+  <br>
+  <br>
+  <%= submit_tag 'Create Distribution Center'%>
+<% end %>
+
+

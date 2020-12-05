@@ -7,6 +7,7 @@ RSpec.describe "distribution centers index page" do
 
     visit "/distribution_centers"
 
+    expect(page).to have_content("Distribution Centers")
     expect(page).to have_content(dc_1.name)
     expect(page).to have_content(dc_2.name)
   end
