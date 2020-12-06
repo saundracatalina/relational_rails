@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'when I visit Candy Shops index page' do
   it 'can see the name of each candy shop in the system' do
 
-    shop_1 = CandyShop.create!(name: "Sweet Tooth")
-    shop_2 = CandyShop.create!(name: "Dentist's Friend")
+    shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
+    shop_2 = CandyShop.create!(name: "Dentist's Friend", state: "Nevada")
 
     visit '/candy_shops'
 
