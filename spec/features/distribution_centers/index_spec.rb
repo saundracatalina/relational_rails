@@ -1,4 +1,4 @@
-require 'rails_helper'
+ 
 
 RSpec.describe "distribution centers index page" do
   it "can see the name of each distribution center record in the system" do
