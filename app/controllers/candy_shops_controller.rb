@@ -20,7 +20,18 @@ class CandyShopsController < ApplicationController
     redirect_to '/candy_shops'
   end
 
-  def edit 
+  def edit
+    @candy_shop = CandyShop.find(params[:id])
+  end
 
+  def update
+    @candy_shop = CandyShop.find(params[:id])
+
+    @candy_shop.update!({
+                name: params[:name],
+                state: params[:state]
+                })
+    @candy_shop.save
+    redirect_to "/candy_shops/#{@candy_shop.id}"
   end
 end
