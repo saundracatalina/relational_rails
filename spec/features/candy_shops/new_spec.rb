@@ -4,6 +4,8 @@ describe 'when I visit New Candy Shop page' do
   it 'displays a form to fill out and a button to Create Candy Shop record' do
     visit "/candy_shops/new"
 
+    expect(page).to have_field("Name")
+    expect(page).to have_field("State")
     expect(page).to have_content("Name")
     expect(page).to have_content("State")
     expect(page).to have_button("Create Candy Shop")
