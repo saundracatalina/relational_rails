@@ -17,22 +17,31 @@ describe 'when I visit Candy Shops show page' do
     expect(page).to have_content(shop_2.state)
   end
 
-  it 'has an Update Candy Shop link' do
+  it 'has a Delete Candy Shop link' do
+    shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
+
+    visit "/candy_shops/#{shop_1.id}"
+
+    expect(page).to have_link("Delete Candy Shop")
+  end
+
+  it 'has an Edit Candy Shop link' do
     shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
 
     visit "/candy_shops/#{shop_1.id}"
 
     expect(page).to have_link("Edit Candy Shop")
   end
-describe 'when I click the Edit Candy Shop link' do
-  it 'takes me to a page with a form to edit a Candy Shop' do
-    shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
 
-    visit "/candy_shops/#{shop_1.id}"
+    describe 'when I click the Edit Candy Shop link' do
+      it 'takes me to a page with a form to edit a Candy Shop' do
+        shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
 
-    click_on "Edit Candy Shop"
+        visit "/candy_shops/#{shop_1.id}"
 
-    expect(current_path).to eq("/candy_shops/#{shop_1.id}/edit")
-    end
-  end
+        click_on "Edit Candy Shop"
+
+        expect(current_path).to eq("/candy_shops/#{shop_1.id}/edit")
+        end
+      end
 end
