@@ -24,6 +24,18 @@ describe 'when I visit Candy Shops show page' do
 
     expect(page).to have_button("Delete Candy Shop")
   end
+    describe 'when I click Delete Candy Shop' do
+      it 'deletes that specific Candy Shop and redirects to index' do
+        shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
+
+        visit "/candy_shops/#{shop_1.id}"
+
+        click_on "Delete Candy Shop"
+
+        expect(current_path).to eq('/candy_shops')
+        expect(page).to have_no_content("#{shop_1.name}")
+      end
+    end
 
   it 'has an Edit Candy Shop link' do
     shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
