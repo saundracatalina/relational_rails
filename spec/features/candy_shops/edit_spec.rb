@@ -12,7 +12,8 @@ describe 'When I fill out the form with updated information and click submit' do
     click_on "Update Candy Shop"
 
     expect(current_path).to eq("/candy_shops/#{shop_1.id}")
-    expect(page).to have_content("")
+    expect(page).to have_content("Lollipops R Us")
+    expect(page).to have_content("Kentucky")
   end
 end
 
