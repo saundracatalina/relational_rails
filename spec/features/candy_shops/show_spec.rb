@@ -22,7 +22,7 @@ describe 'when I visit Candy Shops show page' do
 
     visit "/candy_shops/#{shop_1.id}"
 
-    expect(page).to have_link("Delete Candy Shop")
+    expect(page).to have_button("Delete Candy Shop")
   end
 
   it 'has an Edit Candy Shop link' do
