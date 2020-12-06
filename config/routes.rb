@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/candy_shops/:id', to: 'candy_shops#show'
   get '/candy_shops/:id/edit', to: 'candy_shops#edit'
   patch '/candy_shops/:id', to: 'candy_shops#update'
+  delete '/candy_shops/:id', to: 'candy_shops#destroy'
 end
