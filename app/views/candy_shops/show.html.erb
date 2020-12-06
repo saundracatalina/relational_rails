@@ -2,3 +2,6 @@
 <p><%= "Location: #{@candy_shop.state}" %></p>
 
 <%= link_to 'Edit Candy Shop', "/candy_shops/#{@candy_shop.id}/edit" %>
+<br>
+<br>
+<%= button_to 'Delete Candy Shop', "/candy_shops/#{@candy_shop.id}", method: :delete %>
