@@ -37,4 +37,9 @@ class DistributionCentersController < ApplicationController
 
     redirect_to "/distribution_centers/#{dc.id}"
   end
+
+  def destroy
+    DistributionCenter.destroy(params[:id])
+    redirect_to "/distribution_centers"
+  end
 end

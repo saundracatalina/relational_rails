@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/distribution_centers/:id', to: 'distribution_centers#show'
   get '/distribution_centers/:id/edit', to: 'distribution_centers#edit'
   patch '/distribution_centers/:id', to: 'distribution_centers#update'
+  delete '/distribution_centers/:id', to: 'distribution_centers#destroy'
 end

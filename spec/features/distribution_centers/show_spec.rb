@@ -32,7 +32,7 @@ RSpec.describe "distribution centers show page" do
     expect(page).to have_link("Update Distribution Center")
   end
 
-describe "when I click on the Update Distribution Centers link"
+describe "when I click on the Update Distribution Centers link" do
   it "takes me to the edit page" do
     dc_1 = DistributionCenter.create!(name: "Oh Ship", trucks_deployed: 20)
 
@@ -42,4 +42,26 @@ describe "when I click on the Update Distribution Centers link"
 
     expect(current_path).to eq("/distribution_centers/#{dc_1.id}/edit")
   end
+end
+
+  it "has a delete Distribution Center link" do
+    dc_1 = DistributionCenter.create!(name: "Oh Ship", trucks_deployed: 20)
+
+    visit "/distribution_centers/#{dc_1.id}"
+
+    expect(page).to have_button("Delete Distribution Center")
+  end
+
+describe "When I click the Delete Distribution Center" do
+  it "Deletes Distribution Center and takes user back to index" do
+    dc_1 = DistributionCenter.create!(name: "Oh Ship", trucks_deployed: 20)
+
+    visit "/distribution_centers/#{dc_1.id}"
+
+    click_on "Delete Distribution Center"
+
+    expect(current_path).to eq("/distribution_centers")
+    expect(page).to have_no_content("#{dc_1.name}")
+  end    
+end
 end

@@ -6,3 +6,5 @@
 <p> <%= "Trucks Deployed: #{@distribution_center.trucks_deployed}" %></p>
 
 <%= link_to "Update Distribution Center", "/distribution_centers/#{@distribution_center.id}/edit" %>
+
+<%= button_to "Delete Distribution Center", "/distribution_centers/#{@distribution_center.id}", method: :delete %>
