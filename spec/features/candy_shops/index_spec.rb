@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'when I visit Candy Shops index page' do
+describe 'when I visit Candy Shops index page' do
   it 'can see the name of each candy shop in the system' do
 
     shop_1 = CandyShop.create!(name: "Sweet Tooth")
