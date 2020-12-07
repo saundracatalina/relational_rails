@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   delete '/candy_shops/:id', to: 'candy_shops#destroy'
   get '/candies', to: 'candies#index'
   get '/candy_shops/:id/candies', to: 'candy_shops_candies#index'
+  get '/candies/:id', to: 'candies#show'
 end
