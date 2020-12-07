@@ -1,0 +1,13 @@
+<h1>You messed up, now fix it</h1>
+
+<%= form_tag("/distribution_centers/#{@distribution_center.id}", method: :patch) do %>
+ <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br>
+  <br>
+  <%= label_tag :trucks_deployed %>
+  <%= text_field_tag :trucks_deployed %>
+  <br>
+  <br>
+  <%= submit_tag 'Update Distribution Center' %>
+<% end %>
