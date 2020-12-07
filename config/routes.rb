@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   patch '/distribution_centers/:id', to: 'distribution_centers#update'
   delete '/distribution_centers/:id', to: 'distribution_centers#destroy'
   get '/stores', to: 'stores#index'
+  get 'distribution_centers/:id/stores', to: 'distribution_centers_stores#index'
 end
