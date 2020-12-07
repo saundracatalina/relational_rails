@@ -1,0 +1,26 @@
+require 'rails_helper'
+
+describe "When I visit a specific Candy Shop's Candies page" do
+  it "can see each candy that is associated with that Candy Shop and it's attributes" do
+    shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
+    shop_2 = CandyShop.create!(name: "Dentist's Friend", state: "Missouri")
+    candy_1 = Candy.create!(name: "Taffy", quantity: 5, in_stock: true, candy_shop_id: "#{shop_1.id}")
+    candy_2 = Candy.create!(name: "Fudge", quantity: 0, in_stock: false, candy_shop_id: "#{shop_2.id}")
+
+    visit "/candy_shops/#{shop_1.id}/candies"
+
+    expect(page).to have_content("Taffy")
+    expect(page).to have_content("5")
+    expect(page).to have_content("true")
+    expect(page).to have_content("#{shop_1.id}")
+    
+    expect(page).to have_no_content("Fudge")
+    expect(page).to have_no_content("0")
+    expect(page).to have_no_content("false")
+    expect(page).to have_no_content("#{shop_2.id}")
+  end
+end
+
+# As a visitor
+# When I visit '/parents/:parent_id/child_table_name'
+# Then I see each Child that is associated with that Parent with each Child's attributes:
