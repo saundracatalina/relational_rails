@@ -14,7 +14,3 @@ describe 'When I visit the Candies index page' do
     expect(page).to have_content("#{shop_1.id}")
   end
 end
-
-# As a visitor
-# When I visit '/child_table_name'
-# Then I see each Child in the system including the Child's attributes:
