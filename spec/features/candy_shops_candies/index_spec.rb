@@ -13,11 +13,22 @@ describe "When I visit a specific Candy Shop's Candies page" do
     expect(page).to have_content("5")
     expect(page).to have_content("true")
     expect(page).to have_content("#{shop_1.id}")
-    
+
     expect(page).to have_no_content("Fudge")
     expect(page).to have_no_content("0")
     expect(page).to have_no_content("false")
     expect(page).to have_no_content("#{shop_2.id}")
+  end
+  it "can see a link 'Create Candy' to add a new candy for that Candy Shop and can click link" do
+    shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
+
+    visit "/candy_shops/#{shop_1.id}/candies"
+
+    expect(page).to have_link("Create Candy")
+
+    click_on "Create Candy"
+
+    expect(current_path).to eq("/candy_shops/#{shop_1.id}/candies/new")
   end
 end
 
