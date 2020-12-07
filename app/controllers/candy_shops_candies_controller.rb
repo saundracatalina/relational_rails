@@ -5,4 +5,8 @@ class CandyShopsCandiesController < ApplicationController
       candy.candy_shop_id == params[:id].to_i
     end
   end
+
+  def new
+    
+  end
 end
