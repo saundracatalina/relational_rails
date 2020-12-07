@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   delete '/distribution_centers/:id', to: 'distribution_centers#destroy'
   get '/stores', to: 'stores#index'
   get 'distribution_centers/:id/stores', to: 'distribution_centers_stores#index'
+  get 'stores/:id', to: 'stores#show'
 end

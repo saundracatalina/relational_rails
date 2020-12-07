@@ -8,10 +8,10 @@ describe "Stores Index Page" do
 
     visit "/stores"
 
-    #check to see if you can test the title e/g Name:
+   
     expect(page).to have_content("Stuff 4 Sale")
-    expect(page).to have_content("150")
-    expect(page).to have_content("#{dc.id}")
-    expect(page).to have_content("true")
+    expect(page).to have_content("Shipments Received: 150")
+    expect(page).to have_content("DC ID: #{dc.id}")
+    expect(page).to have_content("Open: true")
   end
 end
