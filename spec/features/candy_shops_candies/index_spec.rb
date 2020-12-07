@@ -10,12 +10,12 @@ describe "When I visit a specific Candy Shop's Candies page" do
     visit "/candy_shops/#{shop_1.id}/candies"
 
     expect(page).to have_content("Taffy")
-    expect(page).to have_content("5")
+    expect(page).to have_content("Quantity: 5")
     expect(page).to have_content("true")
     expect(page).to have_content("#{shop_1.id}")
 
     expect(page).to have_no_content("Fudge")
-    expect(page).to have_no_content("0")
+    expect(page).to have_no_content("Quantity: 0")
     expect(page).to have_no_content("false")
     expect(page).to have_no_content("#{shop_2.id}")
   end
@@ -28,10 +28,6 @@ describe "When I visit a specific Candy Shop's Candies page" do
 
     click_on "Create Candy"
 
-    expect(current_path).to eq("/candy_shops/#{shop_1.id}/candies/new")
+    expect(current_path).to eq("/candy_shops/:id/candies/new")
   end
 end
-
-# As a visitor
-# When I visit '/parents/:parent_id/child_table_name'
-# Then I see each Child that is associated with that Parent with each Child's attributes:
