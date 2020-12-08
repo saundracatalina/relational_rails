@@ -28,6 +28,6 @@ describe "When I visit a specific Candy Shop's Candies page" do
 
     click_on "Create Candy"
 
-    expect(current_path).to eq("/candy_shops/:id/candies/new")
+    expect(current_path).to eq("/candy_shops/#{shop_1.id}/candies/new")
   end
 end
