@@ -7,4 +7,8 @@ class CandiesController < ApplicationController
   def show
     @candy = Candy.find(params[:id])
   end
+
+  def edit
+    
+  end
 end
