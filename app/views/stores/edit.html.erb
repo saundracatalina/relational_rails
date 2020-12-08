@@ -1,0 +1,17 @@
+<h1> Update Store: </h1>
+
+<%= form_tag(store_show_path, method: :patch) do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br>
+  <br>
+  <%= label_tag :shipments_received %>
+  <%= text_field_tag :shipments_received %>
+  <br>
+  <br>
+  <%= label_tag :open %>
+  <%= text_field_tag :open %>
+  <br>
+  <br>
+<%= submit_tag 'Update Store' %>
+<% end %>

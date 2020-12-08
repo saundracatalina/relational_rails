@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   delete '/distribution_centers/:id', to: 'distribution_centers#destroy'
   get '/stores', to: 'stores#index'
   get 'distribution_centers/:id/stores', to: 'distribution_centers_stores#index'
-  get 'stores/:id', to: 'stores#show'
+  get 'stores/:id', to: 'stores#show', as: 'store_show'
   get '/distribution_centers/:id/stores/new', to: 'distribution_centers_stores#new'
   post '/distribution_centers/:id/stores/', to: 'distribution_centers_stores#create'
+  get 'stores/:id/edit', to: 'stores#edit', as: 'store_edit'
+  patch 'stores/:id', to: 'stores#update'
+  delete 'stores/:id', to: 'stores#destroy'
 end

@@ -8,7 +8,7 @@ describe "New Store Page" do
 
     fill_in 'Name', with: "Stuff 4 Sale"
     fill_in :shipments_received, with: 150
-    fill_in :open, with: "Y"
+    fill_in :open, with: "n"
 
     click_on "Create Store"
 

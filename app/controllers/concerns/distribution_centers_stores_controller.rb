@@ -10,14 +10,13 @@ class DistributionCentersStoresController < ApplicationController
   end
 
   def create
-    is_open = (params[:open] == "Y")
+    is_open = (params[:open].upcase == "Y")
   
     store = Store.create!({name: params[:name],
       shipments_received: params[:shipments_received],
       open: is_open,
       distribution_center_id: params[:id]
       })
-      require 'pry'; binding.pry
       redirect_to "/distribution_centers/#{store.distribution_center_id}/stores"
     end
 end

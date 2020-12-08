@@ -36,7 +36,7 @@ describe "Distribution Centers Stores page" do
 
       click_on "Create Store"
       
-      expect(current_path).to eq("/distribution_centers/:id/stores/new")
+      expect(current_path).to eq("/distribution_centers/#{dc_1.id}/stores/new")
     end
   end
 end
