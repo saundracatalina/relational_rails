@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/candy_shops/:id/candies', to: 'candy_shops_candies#index'
   get '/candies/:id', to: 'candies#show'
   get '/candy_shops/:id/candies/new', to: 'candy_shops_candies#new'
+  post '/candy_shops/:id/candies', to: 'candy_shops_candies#create'
 
   get '/distribution_centers', to: 'distribution_centers#index'
   get '/distribution_centers/new', to: 'distribution_centers#new'
