@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "when I visit a specific Candy's page" do
+describe "when I visit a specific Candy's show page" do
   it "has the candy with that id and it's attributes" do
     shop_1 = CandyShop.create!(name: "Sweet Tooth", state: "New York")
     candy_1 = Candy.create!(name: "Taffy", quantity: 5, in_stock: true, candy_shop_id: "#{shop_1.id}")
