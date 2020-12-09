@@ -26,4 +26,9 @@ class CandiesController < ApplicationController
 
     redirect_to "/candies/#{@candy.id}"
   end
+
+  def destroy
+    Candy.destroy(params[:id])
+    redirect_to "/candies"
+  end
 end
