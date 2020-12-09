@@ -12,5 +12,6 @@ describe 'When I visit the Candies index page' do
     expect(page).to have_content("true")
     expect(page).to have_content("Taffy")
     expect(page).to have_content("#{shop_1.id}")
+    expect(page).to have_content("Created On: #{candy_1.created_at.strftime("%m/%d/%y")}")
   end
 end
