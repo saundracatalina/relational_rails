@@ -16,6 +16,6 @@ describe 'when I visit Candy Shops index page' do
 
     visit '/candy_shops'
 
-    expect(page).to have_link("New Candy Shop", href: '/candy_shops/new')
+    expect(page).to have_link("New Candy Shop")
   end
 end

@@ -6,3 +6,5 @@
   <p>In Stock: <%= candy.in_stock %></p>
   <p>Candy Shop Id: <%= candy.candy_shop_id %></p>
 <% end %>
+
+<%= link_to 'Create Candy', "/candy_shops/#{params[:id]}/candies/new" %>

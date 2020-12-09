@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get '/candies', to: 'candies#index'
   get '/candy_shops/:id/candies', to: 'candy_shops_candies#index'
   get '/candies/:id', to: 'candies#show'
+  get '/candy_shops/:id/candies/new', to: 'candy_shops_candies#new'
+  post '/candy_shops/:id/candies', to: 'candy_shops_candies#create'
+  get '/candies/:id/edit', to: 'candies#edit'
+  patch '/candies/:id', to: 'candies#update'
+  delete '/candies/:id', to: 'candies#destroy'
 
   get '/distribution_centers', to: 'distribution_centers#index'
   get '/distribution_centers/new', to: 'distribution_centers#new'

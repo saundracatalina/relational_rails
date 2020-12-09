@@ -2,3 +2,8 @@
 <p>Quantity: <%= @candy.quantity %></p>
 <p>In Stock: <%= @candy.in_stock %></p>
 <p>Candy Id: <%= @candy.id %></p>
+
+<%= link_to 'Update Candy', "/candies/#{params[:id]}/edit" %>
+<br>
+<br>
+<%= button_to 'Delete Candy', "/candies/#{params[:id]}", method: :delete %>
