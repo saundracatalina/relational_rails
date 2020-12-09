@@ -1,3 +1,3 @@
 class Candy < ApplicationRecord
-  # belongs_to :candy_shops
+  belongs_to :candy_shops
 end
