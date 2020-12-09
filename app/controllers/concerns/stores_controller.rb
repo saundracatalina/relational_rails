@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   def index
-    @stores = Store.all
+    @stores = Store.list_by_most_recent
   end
 
   def show
@@ -11,7 +11,9 @@ class StoresController < ApplicationController
   end
 
   def update
-    @store = Store.update({
+    store = Store.find(params[:id])
+
+    store.update({
                           name: params[:name],
                           shipments_received: params[:shipments_received],
                           open: params[:open]

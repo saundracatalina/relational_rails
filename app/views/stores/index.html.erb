@@ -1,8 +1,9 @@
 <h1>Stores</h1>
 
 <% @stores.each do |store| %>
-  <h2><%= store.name %></h2>
+  <h2><%= store.name %></h2> 
   <p>Shipments Received: <%= store.shipments_received %></p>
   <p>DC ID: <%= store.distribution_center_id %></p>
   <p>Open: <%= store.open %></p>
+  <p> <%= store.created_at %></p>
 <% end %>
