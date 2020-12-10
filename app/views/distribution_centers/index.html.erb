@@ -5,3 +5,12 @@
 <% end %>
 
 <a href="/distribution_centers/new">New Distribution Center</a>
+
+<p>
+Only return records with more than
+<%= form_tag '/distribution_centers/trucks' do %>
+  <%= text_field_tag :truck_filter %>
+<%= submit_tag 'Submit' %>
+<% end %>
+Trucks Deployed
+</p>

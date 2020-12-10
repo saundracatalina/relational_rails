@@ -1,0 +1,10 @@
+
+<p>
+Only return records with more than
+<%= form_tag('/distribution_centers', method: :get) do %>
+  <%= text_field_tag :trucks_deployed %>
+<%= submit_tag 'Submit' %>
+<% end %>
+Trucks Deployed
+</p>
+

@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   def index
-    @stores = Store.list_by_most_recent
+    @stores = Store.true_first.list_by_most_recent
   end
 
   def show

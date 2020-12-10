@@ -5,8 +5,12 @@ class Store < ApplicationRecord
     order(created_at: :desc)
   end
 
-  def self.store_count
-    require 'pry'; binding.pry
+  def self.stores_by_dc(params)
+    Store.where(distribution_center_id: params[:id])
+  end
+
+  def self.true_first
+     order(open: :desc)
   end
 end
 
