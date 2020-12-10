@@ -1,6 +1,12 @@
 class DistributionCentersController < ApplicationController
   def index
-    @distribution_centers = DistributionCenter.all
+    # truck_filter = session[:tmp_checked]
+    # session[:tmp_checked] = nil
+    # if truck_filter != nil
+    #   @distribution_centers = DistributionCenter.filtered_trucks(truck_filter)
+    # else
+      @distribution_centers = DistributionCenter.all
+    # end
   end
 
   def show
@@ -42,4 +48,11 @@ class DistributionCentersController < ApplicationController
     DistributionCenter.destroy(params[:id])
     redirect_to "/distribution_centers"
   end
+
+  def trucks
+    session[:tmp_checked] = params[:truck_filter]
+    require 'pry'; binding.pry
+    redirect_to distribution_centers_path
+  end
+
 end

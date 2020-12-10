@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   delete '/candies/:id', to: 'candies#destroy'
 
   get '/distribution_centers', to: 'distribution_centers#index'
+  post '/distribution_centers/trucks', to: 'distribution_centers#trucks'
   get '/distribution_centers/new', to: 'distribution_centers#new'
   post '/distribution_centers/', to: 'distribution_centers#create'
   get '/distribution_centers/:id', to: 'distribution_centers#show'
@@ -26,4 +27,10 @@ Rails.application.routes.draw do
   delete '/distribution_centers/:id', to: 'distribution_centers#destroy'
   get '/stores', to: 'stores#index'
   get 'distribution_centers/:id/stores', to: 'distribution_centers_stores#index'
+  get 'stores/:id', to: 'stores#show', as: 'store_show'
+  get '/distribution_centers/:id/stores/new', to: 'distribution_centers_stores#new'
+  post '/distribution_centers/:id/stores/', to: 'distribution_centers_stores#create'
+  get 'stores/:id/edit', to: 'stores#edit', as: 'store_edit'
+  patch 'stores/:id', to: 'stores#update'
+  delete 'stores/:id', to: 'stores#destroy'
 end

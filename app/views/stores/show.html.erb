@@ -1,0 +1,8 @@
+<h1> <%= "#{@store.name}" %> </h1>
+
+<p> Shipments Received: <%= "#{@store.shipments_received}" %> </p>
+<p> Open: <%= "#{@store.open}" %> </p>
+
+<%= link_to "Update Store", store_edit_path %>
+<%= button_to "Delete Store", store_show_path, method: :delete %>
+
