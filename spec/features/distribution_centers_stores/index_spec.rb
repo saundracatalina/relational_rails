@@ -39,4 +39,15 @@ describe "Distribution Centers Stores page" do
       expect(current_path).to eq("/distribution_centers/#{dc_1.id}/stores/new")
     end
   end
+
+  it "Shows how many stores belong to the DC" do
+    dc_1 = DistributionCenter.create!(name: "Oh Ship", trucks_deployed: 20)
+
+    store_1 = Store.create!(name: "Stuff 4 Sale", shipments_received: 150, distribution_center_id: "#{dc_1.id}", open: true)
+    store_2 = Store.create!(name: "Stuff, Stuff, Stuff", shipments_received: 10, distribution_center_id: "#{dc_1.id}", open: true)
+
+    visit "/distribution_centers/#{dc_1.id}/stores"
+
+    expect(page).to have_content("Number of Stores: 2")
+  end
 end
