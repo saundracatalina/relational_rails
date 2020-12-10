@@ -1,0 +1,12 @@
+<h1>All the Candies for ______(insert shop name here)</h1>
+
+<h3>There are <%=@candies_by_shop.count%> types of candies at this shop!</h3>
+
+<% @candies_by_shop.each do |candy| %>
+  <h3><%= candy.name %></h3>
+  <p>Quantity: <%= candy.quantity %></p>
+  <p>In Stock: <%= candy.in_stock %></p>
+  <p>Candy Shop Id: <%= candy.candy_shop_id %></p>
+<% end %>
+
+<%= link_to 'Create Candy', "/candy_shops/#{params[:id]}/candies/new" %>

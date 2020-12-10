@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get '/candy_shops', to: 'candy_shops#index'
+  get '/candy_shops/new', to: 'candy_shops#new'
+  post '/candy_shops', to: 'candy_shops#create'
+  get '/candy_shops/:id', to: 'candy_shops#show'
+  get '/candy_shops/:id/edit', to: 'candy_shops#edit'
+  patch '/candy_shops/:id', to: 'candy_shops#update'
+  delete '/candy_shops/:id', to: 'candy_shops#destroy'
+  get '/candies', to: 'candies#index'
+  get '/candy_shops/:id/candies', to: 'candy_shops_candies#index'
+  get '/candies/:id', to: 'candies#show'
+  get '/candy_shops/:id/candies/new', to: 'candy_shops_candies#new'
+  post '/candy_shops/:id/candies', to: 'candy_shops_candies#create'
+  get '/candies/:id/edit', to: 'candies#edit'
+  patch '/candies/:id', to: 'candies#update'
+  delete '/candies/:id', to: 'candies#destroy'
+
   get '/distribution_centers', to: 'distribution_centers#index'
   post '/distribution_centers/trucks', to: 'distribution_centers#trucks'
   get '/distribution_centers/new', to: 'distribution_centers#new'

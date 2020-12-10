@@ -1,0 +1,13 @@
+<h1>Fill in this form to enter a new Candy!</h1>
+
+<%= form_tag "/candy_shops/#{params[:id]}/candies" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br>
+  <br>
+  <%= label_tag :quantity %>
+  <%= text_field_tag :quantity %>
+  <br>
+  <br>
+  <%= submit_tag 'Create Candy' %>
+<% end %>

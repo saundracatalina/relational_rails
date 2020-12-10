@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_221307) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
   end
 
   create_table "distribution_centers", force: :cascade do |t|
