@@ -1,5 +1,7 @@
 <h1>All the Candies for ______(insert shop name here)</h1>
 
+<h3>There are <%=@candies_by_shop.count%> types of candies at this shop!</h3>
+
 <% @candies_by_shop.each do |candy| %>
   <h3><%= candy.name %></h3>
   <p>Quantity: <%= candy.quantity %></p>

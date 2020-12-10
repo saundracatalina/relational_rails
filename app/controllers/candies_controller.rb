@@ -1,7 +1,7 @@
 class CandiesController < ApplicationController
 
   def index
-    @candies = Candy.all
+    @candies = Candy.true_first.list_by_most_recent
   end
 
   def show
