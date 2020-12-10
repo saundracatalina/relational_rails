@@ -1,12 +1,9 @@
 class DistributionCentersStoresController < ApplicationController
   def index
-    @stores_by_dc = Store.all.select do |store|
-      store.distribution_center_id == params[:id].to_i
-    end
+    @stores = Store.stores_by_dc(params)
   end
 
   def new
-
   end
 
   def create
