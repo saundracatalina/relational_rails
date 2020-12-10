@@ -30,4 +30,14 @@ describe "When I visit a specific Candy Shop's Candies page" do
 
     expect(current_path).to eq("/candy_shops/#{shop_1.id}/candies/new")
   end
+  it "can see a count of the number of Candies associated with the Candy Shop" do
+    shop_1 = CandyShop.create!(name: "Dentist's Friend", state: "Missouri")
+    candy_1 = Candy.create!(name: "Taffy", quantity: 5, in_stock: true, candy_shop_id: "#{shop_1.id}")
+    candy_2 = Candy.create!(name: "Fudge", quantity: 0, in_stock: false, candy_shop_id: "#{shop_1.id}")
+    candy_3 = Candy.create!(name: "Nerds", quantity: 8, in_stock: true, candy_shop_id: "#{shop_1.id}")
+
+    visit "/candy_shops/#{shop_1.id}/candies"
+
+    expect(page).to have_content("There are 3 types of candies at this shop!")
+  end
 end
